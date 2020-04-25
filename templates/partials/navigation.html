@@ -1,27 +1,47 @@
-<nav id="menu">
-  <a class="close-button">Close</a>
-  <div class="nav-wrapper">
-    <p class="nav-label">Menu</p>
-    <ul>
-      {% for title, link in MENUITEMS %}
-          <li><a href="{{ link }}" role="presentation">{{ title }}</a></li>
-      {% endfor %}
-
-      {% if DISPLAY_PAGES_ON_MENU %}
-          {% for p in pages %}
-              <li{% if p == page %} class="nav-{{p.slug}} active"{% endif %} role="presentation"><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-          {% endfor %}
-      {% else %}
-          {% if DISPLAY_CATEGORIES_ON_MENU %}
-              {% for cat, null in categories %}
-                  <li{% if cat == category %} class="nav-{{cat.slug}} active"{% endif %} role="presentation"><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-              {% endfor %}
-          {% endif %}
+<div class="nav-header">
+  <nav class="nav-wrapper">
+      {% if SITELOGO %}
+      <span class="logo">
+        <a href="{{ SITEURL }}" title="Home"><img src="{{ SITELOGO }}" alt="Logo"/></a>
+      </span>
       {% endif %}
 
-      {% for name,link in SOCIAL if name in ['rss', 'rss-square', 'feed'] %}
-        <li class="nav-rss"><a href="{{ link }}"><i class="ic ic-rss"></i> Subscribe</a></li>
-      {% endfor %}
-    </ul>
+      <ul role="navigation" aria-label="Navigation">
+        {% set current_url = "/" %}
+        {% if archives %}{% set current_url = "/archives" %}{% endif %}
+        {% if article %}{% set current_url = "" %}{% endif %}
+        {% if page %}{% set current_url = "/" + page.slug %}{% endif %}
+
+        {% for title, link in MENUITEMS %}
+        <li{% if current_url == link %} class="active"{% endif %}>
+          <a href="{{ link }}" role="presentation"><span>{{ title }}</span></a>
+        </li>
+        {% endfor %}
+      </ul>
+
+
+      <ul class="nav-side">
+        {# TODO
+        {% for title, link in SOCIAL %}
+        {% set social_name = title.lower() %}
+        <li class="nav-{{ social_name }}">
+          <a title="{{title}}" href="{{link}}" target="_blank">
+            <i class="icon icon-{{ social_name }}"></i><span>{{title}}</span>
+          </a>
+        </li>
+        {% endfor %}
+        #}
+        <li class="nav-rss"><a title="RSS" href="{{SITEURL}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>RSS</span></a></li>
+        <!-- <li class="nav-search" style="display: none;"><a title="Search"><i class="icon icon-search"></i><span>Search</span></a></li> -->
+      </ul>
+  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu"><i class="icon icon-menu"></i>Menu</a>
+      <!-- <a class="nav-search" style="display: none;" title="Search"><i class="icon icon-search"></i><span>Search</span></a> -->
+    </div>
   </div>
-</nav>
+</div>
+<div class="nav-close"></div>
+
