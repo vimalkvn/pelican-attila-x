@@ -100,12 +100,12 @@
           {% for author in article.authors %}
             <h4 class="post-meta-author">{{author.name}}</h4>
           {% endfor %}
-          <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
+          Published <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %b %Y') }}</time>
+          {% if article.modified %}
+          &bull; Updated <time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %b %Y') }}</time>
+          {% endif %}
         </div>
-        <!-- TODO : Modified check -->
-        {% if article.modified %}
-            <span class="post-meta"> &bull; Updated on {{ article.locale_modified }}</span>
-        {% endif %}
+
         {% if selected_cover %}
             <div class="post-cover cover">
               <img src="{{ selected_cover }}" alt="{{ title }}" />
