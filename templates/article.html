@@ -100,7 +100,7 @@
           {% for author in article.authors %}
             <h4 class="post-meta-author">{{author.name}}</h4>
           {% endfor %}
-          Published <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %b %Y') }}</time>
+          <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %b %Y') }}</time>
           {% if article.modified %}
           &bull; Updated <time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %b %Y') }}</time>
           {% endif %}
