@@ -236,28 +236,6 @@
 	    });
 	  }
 	  codestyling();
-		// Reading progress bar on window top
-	  function readingProgress() {
-			var postBottom = post.offset().top + post.height();
-			var viewportHeight = viewport.height();
-      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
-      $('.progress-bar').css('width', progress + '%');
-      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
-	  }
-	  readingProgress();
-		// Trigger reading progress
-	  viewport.on({
-	    'scroll': function() {
-	      readingProgress();
-	    },
-	    'resize': function() {
-	      readingProgress();
-	    },
-	    'orientationchange': function() {
-	      readingProgress();
-	    }
-	  });
-
   });
 </script>
 {% endblock scripts %}
