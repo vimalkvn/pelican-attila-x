@@ -8,15 +8,13 @@
   {% else %}
     {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
   {% endif %}
-{% elif HEADER_COLOR %}
-  {% set selected_color = HEADER_COLOR %}
 {% endif %}
 
 
 {% block header %}
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header id="blog-header" {% if selected_cover or selected_color %}class="has-cover"{% endif %}>
+    <header class="blog-header{% if selected_cover %} has-cover{% endif %}">
       <div class="inner">
         <nav id="navigation">
           {% if SITE_LOGO %}

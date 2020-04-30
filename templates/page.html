@@ -25,14 +25,10 @@
   {% else %}
     {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
   {% endif %}
-{% elif page.color %}
-  {% set selected_color = page.color %}
-{% elif HEADER_COLOR %}
-  {% set selected_color = HEADER_COLOR %}
 {% endif %}
 
 {% block header %}
-    <header class="post-header{% if selected_cover or selected_color %} has-cover{% endif %}">
+    <header class="post-header{% if selected_cover %} has-cover{% endif %}">
       <div class="inner">
         <h1 class="post-title">{{ page.title }}</h1>
         {% if selected_cover %}

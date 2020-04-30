@@ -15,16 +15,12 @@
   {% else %}
     {% set selected_cover = SITEURL+"/"+article.og_image %}
   {% endif %}
-{% elif article.color %}
-  {% set selected_color = article.color %}
 {% elif HEADER_COVER %}
   {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
     {% set selected_cover = HEADER_COVER %}
   {% else %}
     {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
   {% endif %}
-{% elif HEADER_COLOR %}
-  {% set selected_color = HEADER_COLOR %}
 {% endif %}
 
 {% block canonical_url %}<link href="{{ SITEURL }}/{{ article.url }}" rel="canonical" />{% endblock canonical_url %}
@@ -61,7 +57,7 @@
         <span class="progress-bar"></span>
     </div>
 
-    <header class="post-header{% if selected_cover or selected_color %} has-cover{% endif %}">
+    <header class="post-header{% if selected_cover %} has-cover{% endif %}">
       <div class="inner">
         <span class="post-info">
           <span class="post-type">Blog</span>
@@ -88,7 +84,7 @@
                     <figure class="post-meta-avatar avatar">
 
                     <a href="{{ SITEURL }}/{{ author.url }}"  class="author-avatar">
-                      <img class="author-profile-image" src="{{ author_image }}" alt="{{ author_name }}" />
+                      <img class="author-profile-image" src="{{ SITEURL }}/{{ author_image }}" alt="{{ author_name }}" />
                     </a>
                   </figure>
                     {% endif %}
