@@ -96,9 +96,9 @@
           {% for author in article.authors %}
             <h4 class="post-meta-author">{{author.name}}</h4>
           {% endfor %}
-          <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %b %Y') }}</time>
+          <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time>
           {% if article.modified %}
-          &bull; Updated <time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %b %Y') }}</time>
+          &bull; Updated <time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time>
           {% endif %}
         </div>
 

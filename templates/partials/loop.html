@@ -16,7 +16,7 @@
                         {% endif %}
                         <a href="{{ SITEURL }}/{{ author.url }}">{{ author_name }}</a>
                     {% endfor %}
-                     | <time datetime="{{ article.locale_date }}">{{ article.locale_date }}</time>
+                     &bull; <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time>
                 </span>
             
             {% if SHOW_FULL_ARTICLE %}
