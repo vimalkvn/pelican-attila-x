@@ -21,7 +21,6 @@
 
 
       <ul class="nav-side">
-        {# TODO
         {% for title, link in SOCIAL %}
         {% set social_name = title.lower() %}
         <li class="nav-{{ social_name }}">
@@ -30,8 +29,11 @@
           </a>
         </li>
         {% endfor %}
-        #}
-        <li class="nav-rss"><a title="RSS" href="{{SITEURL}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>RSS</span></a></li>
+        <li class="nav-rss">
+          <a title="RSS" href="{{SITEURL}}/rss/" target="_blank">
+            <i class="icon icon-rss"></i><span>RSS</span>
+          </a>
+        </li>
         <!-- <li class="nav-search" style="display: none;"><a title="Search"><i class="icon icon-search"></i><span>Search</span></a></li> -->
       </ul>
   </nav>
