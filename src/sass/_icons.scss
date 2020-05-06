@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'icon';
-  src: url('../font/icon.eot?16535418');
-  src: url('../font/icon.eot?16535418#iefix') format('embedded-opentype'),
-       url('../font/icon.woff2?16535418') format('woff2'),
-       url('../font/icon.woff?16535418') format('woff'),
-       url('../font/icon.ttf?16535418') format('truetype'),
-       url('../font/icon.svg?16535418#icon') format('svg');
+  src: url('../font/icon.eot?99740918');
+  src: url('../font/icon.eot?99740918#iefix') format('embedded-opentype'),
+       url('../font/icon.woff2?99740918') format('woff2'),
+       url('../font/icon.woff?99740918') format('woff'),
+       url('../font/icon.ttf?99740918') format('truetype'),
+       url('../font/icon.svg?99740918#icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'icon';
-    src: url('../font/icon.svg?16535418#icon') format('svg');
+    src: url('../font/icon.svg?99740918#icon') format('svg');
   }
 }
 */
@@ -55,13 +55,13 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-mail:before { content: '\e800'; } /* '' */
-.icon-gitlab:before { content: '\e801'; } /* '' */
-.icon-globe:before { content: '\e802'; } /* '' */
-.icon-arrow-left:before { content: '\e803'; } /* '' */
-.icon-arrow-right:before { content: '\e804'; } /* '' */
-.icon-search:before { content: '\e805'; } /* '' */
-.icon-star:before { content: '\e806'; } /* '' */
+.icon-gitlab:before { content: '\e800'; } /* '' */
+.icon-star:before { content: '\e801'; } /* '' */
+.icon-mail:before { content: '\e802'; } /* '' */
+.icon-globe:before { content: '\e803'; } /* '' */
+.icon-arrow-left:before { content: '\e804'; } /* '' */
+.icon-arrow-right:before { content: '\e805'; } /* '' */
+.icon-search:before { content: '\e806'; } /* '' */
 .icon-rss:before { content: '\e807'; } /* '' */
 .icon-mastodon:before { content: '\e80c'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
