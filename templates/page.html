@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
 {% block title %}{{ page.title }}{% endblock title %}
 
@@ -7,28 +7,20 @@
 {% endblock canonical_url %}
 
 {# <!-- Choosing cover image --> #}
+{% set selected_cover = "" %}
 {% if page.cover %}
-  {% if page.cover|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = page.cover %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+page.cover %}
-  {% endif %}
+    {% set selected_cover = SITEURL + "/" + page.cover %}
 {% elif page.og_image %}
-  {% if page.og_image|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = page.og_image %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+page.og_image %}
-  {% endif %}
-{% elif HEADER_COVER %}
-  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = HEADER_COVER %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
-  {% endif %}
+    {% set selected_cover = SITEURL + "/" + page.og_image %}
+{% elif COVER_IMAGES and "page" in COVER_IMAGES %}
+  {% set selected_cover = SITEURL + "/" + COVER_IMAGES["page"] %}
 {% endif %}
 
+
+
+
 {% block header %}
-    <header class="post-header{% if selected_cover %} has-cover{% endif %}">
+  <header {%if selected_cover %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
       <div class="inner">
         <h1 class="post-title">{{ page.title }}</h1>
         {% if selected_cover %}
