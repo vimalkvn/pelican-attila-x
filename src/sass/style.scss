@@ -24,7 +24,7 @@ html.menu-active {
 }
 
 body {
-	font: 300 1em / 1.5em 'Inter', sans-serif;
+	font: 300 1em / 1.5em 'Roboto', sans-serif;
 	color: $color-text-primary;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -137,7 +137,7 @@ textarea {
 		line-height: 1.5em;
 		text-align: right;
 		color: $color-primary;
-		font-family: 'Inter', sans-serif;
+		font-family: 'Roboto', sans-serif;
 	}
 
 	ul > li:before {
