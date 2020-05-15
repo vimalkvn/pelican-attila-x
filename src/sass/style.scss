@@ -4,6 +4,7 @@
 @import "normalize";
 @import "colors";
 @import "icons";
+@import "fonts";
 
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
@@ -23,9 +24,7 @@ html.menu-active {
 }
 
 body {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	font-size: 1em;
-	line-height: 1.5em;
+	font: 300 1em / 1.5em Lato, sans-serif;
 	color: $color-text-primary;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -108,13 +107,13 @@ textarea {
 	}
 
 	p {
-		font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+		font-family: Merriweather, serif;
 		margin: 0 0 4rem;
 	}
 
 	ol,
 	ul {
-		font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+		font-family: Merriweather, serif;
 		margin: 0 0 4rem;
 		padding-left: 2em;
 		box-sizing: border-box;
@@ -138,6 +137,7 @@ textarea {
 		line-height: 1.5em;
 		text-align: right;
 		color: $color-primary;
+		font-family: Lato, sans-serif;
 	}
 
 	ul > li:before {
@@ -176,7 +176,7 @@ textarea {
 	}
 
 	blockquote {
-		font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+		font-family: Merriweather, serif;
 		margin: 0 0 4rem;
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
@@ -207,7 +207,7 @@ textarea {
 
 	b,
 	strong {
-		font-weight: 700;
+		font-weight: 400;
 		@media (prefers-color-scheme: dark) {
 			color: $color-neutral-80;
 		}
@@ -218,7 +218,7 @@ textarea {
 	}
 
 	dl {
-		font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+		font-family: Merriweather, serif;
 		margin: 0 0 4rem;
 		padding-left: 30px;
 	}
@@ -255,7 +255,7 @@ textarea {
 		position: relative;
 		margin: 0 1px;
 		padding: 4px 8px;
-		font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+		font-family: monospace, sans-serif;
 		font-size: 0.75em;
 		background: $color-background;
 		border: 1px solid $color-border;
@@ -272,7 +272,7 @@ textarea {
 		margin: 0 0 4rem;
 		padding: 1em;
 		overflow: hidden;
-		font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+		font-family: monospace, sans-serif;
 		white-space: pre;
 		background: $color-background;
 		border: 1px solid $color-border;
@@ -782,7 +782,7 @@ textarea {
 }
 
 .blog-description {
-	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+	font-family: 'Merriweather', serif;
 	display: block;
 	margin-top: 1rem;
 	padding: 0;
@@ -1487,6 +1487,12 @@ textarea {
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-bottom: 1rem;
 	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+		font-weight: 500;
+	}
 }
 
 .nav-credits {
@@ -1774,7 +1780,7 @@ textarea {
 
 .post-excerpt {
 	margin: 1em 0 0;
-	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+	font-family: Merriweather, serif;
 	font-size: 2em;
 	line-height: 1.5em;
 }
@@ -2187,7 +2193,7 @@ textarea {
 .post-nav-excerpt {
 	height: 5rem;
 	margin: 0 0 1rem;
-	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+	font-family: Merriweather, serif;
 	font-size: 1.75em;
 	line-height: 2.5rem;
 	display: -webkit-box;
