@@ -1,55 +1,36 @@
 {% extends "base.html" %}
 
-{% block title %}{{ SITENAME }} - Tag {{ tag }}{% endblock %}
+{% block title %}{{ SITENAME }} - Posts tagged with {{ tag }}{% endblock %}
 
-{# <!-- Choosing cover image --> #}
-{% if tag in HEADER_COVERS_BY_TAG %}
-  {% set tag_cover = HEADER_COVERS_BY_TAG.get(tag) %}
-  {% if tag_cover|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = tag_cover %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+tag_cover %}
-  {% endif %}
-{% elif HEADER_COVER %}
-  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = HEADER_COVER %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
+{% if COVER_IMAGES and "tags" in COVER_IMAGES %}
+  {% if tag in COVER_IMAGES["tags"] %}
+    {% set selected_cover = SITEURL + "/" + COVER_IMAGES["tags"][tag] %}
   {% endif %}
 {% endif %}
 
 {% block header %}
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="blog-header{% if selected_cover %} has-cover{% endif %}">
+    <header {%if selected_cover %}class="blog-header has-cover"{% else %}class="blog-header"{% endif %}>
       <div class="inner">
-        <nav id="navigation">
-          {% if SITE_LOGO %}
-            <span class="blog-logo">
-                <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Blog Logo" /></a>
-            </span>
-          {% else %}
-            <span id="home-button" class="nav-button">
-                <a class="home-button" href="{{ SITEURL }}/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
-            </span>
-          {% endif %}
-          <span id="menu-button" class="nav-button">
-            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+        <div class="archive archive-tag box archive-box">
+          <span class="archive-info">
+            <span class="archive-type">Tag</span>
+            <span class="archive-count">{{ articles|count }} {% if articles|count > 1 %} Posts {% else %} Post {% endif %}</span>
           </span>
-        </nav>
-        <h1 class="post-title">Tag {{ tag }}</h1>
-        <span class="blog-description">Posts: {{ articles|count }}</span>
+          <h2 class="archive-title">{{ tag }}</h2>
+        </div>
+    
         {% if selected_cover %}
-          <div class="blog-cover cover" style="background-image: url('{{ selected_cover }}')">
-        {% elif selected_color %}
-          <div class="blog-cover cover" style="background-color: {{ selected_color }}">
+        <div class="blog-cover cover">
+          <img
+          src="{{ selected_cover }}"
+          alt="{{ SITENAME }}" />
+        </div>
         {% endif %}
       </div>
     </header>
 {% endblock header %}
 
 {% block content %}
-
 <div id="index" class="container">
   <main class="content" role="main">
     {% include "partials/loop.html" %}
