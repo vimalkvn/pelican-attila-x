@@ -315,8 +315,9 @@ textarea {
 		display: block;
 		position: static;
 		top: auto;
-		margin: -1.33334em -1.33334em -1.33334em 1.33334em;
-		padding: 1.33334em;
+        /* disable margin and padding until pygments line number formatting is fixed */
+/* 		margin: -1.33334em -1.33334em -1.33334em 1.33334em; */
+/* 		padding: 1.33334em; */
 		overflow-x: auto;
 		font-size: 0.75em;
 		line-height: 2em;
