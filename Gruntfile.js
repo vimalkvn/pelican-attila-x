@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       'jsSrcDir': 'src/js',
       'jsTargetDir': 'static/js',
       'jsDependencies': [
-        '<%= config.jsSrcDir %>/libs/jquery-3.4.1.min.js',
+        '<%= config.jsSrcDir %>/libs/jquery.min.js',
         '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
         '<%= config.jsSrcDir %>/libs/jquery.history.js'
       ]

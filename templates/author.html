@@ -70,6 +70,12 @@
             {% if AUTHORS_BIO[author_name].mastodon %}
               <a target="_blank" href="{{ AUTHORS_BIO[author_name].mastodon }}" title="Mastodon"><i class="icon icon-mastodon"></i><span>Mastodon</span></a>
             {% endif %}
+            {% if AUTHORS_BIO[author_name].twitter %}
+              <a target="_blank" href="{{ AUTHORS_BIO[author_name].twitter }}" title="Twitter"><i class="icon icon-twitter"></i><span>Twitter</span></a>
+            {% endif %}
+            {% if AUTHORS_BIO[author_name].facebook %}
+              <a target="_blank" href="{{ AUTHORS_BIO[author_name].facebook }}" title="Facebook"><i class="icon icon-facebook"></i><span>Facebook</span></a>
+            {% endif %}
           </span>
           {% endif %}
         </div>

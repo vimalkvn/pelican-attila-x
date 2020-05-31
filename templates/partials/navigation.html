@@ -1,12 +1,12 @@
 <div class="nav-header">
-  <nav class="nav-wrapper">
+  <nav class="nav-wrapper" aria-label="Main">
       {% if SITELOGO %}
       <span class="logo">
         <a href="{{ SITEURL }}" title="Home"><img src="{{ SITELOGO }}" alt="Logo"/></a>
       </span>
       {% endif %}
 
-      <ul role="navigation" aria-label="Navigation">
+      <ul>
         {% set current_url = "/" %}
         {% if archives %}{% set current_url = "/archives" %}{% endif %}
         {% if article %}{% set current_url = "" %}{% endif %}
@@ -14,7 +14,7 @@
 
         {% for title, link in MENUITEMS %}
         <li{% if current_url == link %} class="active"{% endif %}>
-          <a href="{{ link }}" role="presentation"><span>{{ title }}</span></a>
+          <a href="{{ link }}"><span>{{ title }}</span></a>
         </li>
         {% endfor %}
       </ul>
@@ -24,15 +24,11 @@
         {% for title, link in SOCIAL %}
         {% set social_name = title.lower() %}
         <li class="nav-{{ social_name }}">
-          <a title="{{title}}" href="{{link}}" target="_blank">
-            <i class="icon icon-{{ social_name }}"></i><span>{{title}}</span>
-          </a>
+          <a aria-label="{{ social_name }}" title="{{title}}" href="{{link}}" target="_blank"><i class="icon icon-{{ social_name }}" aria-hidden="true"></i></a>
         </li>
         {% endfor %}
         <li class="nav-rss">
-          <a title="RSS" href="{{SITEURL}}/rss/" target="_blank">
-            <i class="icon icon-rss"></i><span>RSS</span>
-          </a>
+          <a title="RSS" href="{{SITEURL}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a>
         </li>
         <!-- <li class="nav-search" style="display: none;"><a title="Search"><i class="icon icon-search"></i><span>Search</span></a></li> -->
       </ul>
@@ -40,10 +36,10 @@
 
   <div class="nav-wrapper-control">
     <div class="inner">
-      <a class="nav-menu"><i class="icon icon-menu"></i>Menu</a>
-      <!-- <a class="nav-search" style="display: none;" title="Search"><i class="icon icon-search"></i><span>Search</span></a> -->
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <!-- <a class="nav-search" style="display: none;" title="Search" role="button"><i class="icon icon-search" aria-hidden="true"></i><span>Search</span></a> -->
     </div>
   </div>
 </div>
-<div class="nav-close"></div>
+<div class="nav-close" role="button" aria-label="Close"></div>
 

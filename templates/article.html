@@ -115,7 +115,9 @@
             </section>
 
             <section class="post-footer">
-                {% block share_section %}{% endblock %}
+                {% block share_section %}
+                    {% include "partials/share.html" %}
+                {% endblock %}
                 {% if article.tags %}
                 <aside class="post-tags">
                   <span class="post-info-label">Tagged in</span>
