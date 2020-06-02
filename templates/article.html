@@ -128,25 +128,11 @@
                 {% endif %}
                 </section>
 
-                {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
-                <script type="text/javascript">
-                    var disqus = '{{ DISQUS_SITENAME }}';
-                    var disqus_shortname = '{{ DISQUS_SITENAME }}';
-                    {% if article.disqus_identifier %}
-                    var disqus_identifier = '{{ article.disqus_identifier }}';
-                    {% else %}
-                    var disqus_identifier = '/{{ article.url }}';
-                    {% endif %}
-                    var disqus_url = '{{ SITEURL }}/{{ article.url }}';
-                </script>
+                {% if COMMENTO_ENABLED and article.status != "draft" %}          
+                <script defer src="https://cdn.commento.io/js/commento.js"></script>
                 <noscript>Please enable JavaScript to view the comments.</noscript>
                 <section class="post-comments">
-                    {% if article.disqus_identifier %}
-                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="{{ article.disqus_identifier }}" >Show Comments</a>
-                    {% else %}
-                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/{{ article.url }}" >Show Comments</a>
-                    {% endif %}
-                    <div id="disqus_thread"></div>
+                  <div id="commento"></div>                  
                 </section>
                 {% endif %}
 
