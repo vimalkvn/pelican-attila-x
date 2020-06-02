@@ -2,25 +2,8 @@
 
 {% block title %}{{ article.title }}{% endblock %}
 
-{# <!-- Choosing cover image --> #}
 {% if article.cover %}
-  {% if article.cover|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = article.cover %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+article.cover %}
-  {% endif %}
-{% elif article.og_image %}
-  {% if article.og_image|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = article.og_image %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+article.og_image %}
-  {% endif %}
-{% elif HEADER_COVER %}
-  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = HEADER_COVER %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
-  {% endif %}
+    {% set cover_image = SITEURL + "/" + article.cover %}
 {% endif %}
 
 {% block canonical_url %}<link href="{{ SITEURL }}/{{ article.url }}" rel="canonical" />{% endblock canonical_url %}
@@ -52,7 +35,7 @@
 {% endblock %}
 
 {% block header %}
-    <header {%if selected_cover %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
+    <header {% if cover_image %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
       <div class="inner">
         <span class="post-info">
           <span class="post-type">Blog</span>
@@ -97,9 +80,9 @@
           {% endif %}
         </div>
 
-        {% if selected_cover %}
+        {% if cover_image %}
             <div class="post-cover cover">
-              <img src="{{ selected_cover }}" alt="{{ title }}" />
+              <img src="{{ cover_image }}" alt="{{ title }}" />
             </div>
         {% endif %}
       </div>
