@@ -1,0 +1,9 @@
+{% if COMMENTO_ENABLED %}
+  {% if (article and article.status != "draft") or (page and page.status != "draft") %}          
+  <section class="post-comments">
+    <script defer src="https://cdn.commento.io/js/commento.js" data-no-fonts="true"></script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+    <div id="commento"></div>                  
+  </section>
+  {% endif %}
+{% endif %}

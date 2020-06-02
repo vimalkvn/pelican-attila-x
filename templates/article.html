@@ -127,14 +127,8 @@
                 </aside>
                 {% endif %}
                 </section>
-
-                {% if COMMENTO_ENABLED and article.status != "draft" %}          
-                <script defer src="https://cdn.commento.io/js/commento.js" data-no-fonts="true"></script>
-                <noscript>Please enable JavaScript to view the comments.</noscript>
-                <section class="post-comments">
-                  <div id="commento"></div>                  
-                </section>
-                {% endif %}
+                
+                {% include "partials/comments.html" %}
 
                 <aside class="post-nav">
                     {% if article.next_article %}
