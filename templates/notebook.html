@@ -1,8 +1,8 @@
 {% extends "page.html" %}
 
 {% block header %}
-    {# selected_cover is defined in page.html on which this template is based on #}
-    <header {%if selected_cover %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
+    {# cover_image is defined in page.html on which this template is based on #}
+    <header {%if cover_image %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
       <div class="inner">
         <span class="post-info">
           <span class="post-type">Notebook</a></span>
@@ -44,9 +44,9 @@
           {% endif %}
         </div>
 
-        {% if selected_cover %}
+        {% if cover_image %}
             <div class="post-cover cover">
-              <img src="{{ selected_cover }}" alt="{{ title }}" />
+              <img src="{{ cover_image }}" alt="{{ title }}" />
             </div>
         {% endif %}
       </div>
