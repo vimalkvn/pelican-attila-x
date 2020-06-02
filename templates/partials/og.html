@@ -6,13 +6,7 @@
 {% endif %}
 
 {# <!-- Choosing cover image --> #}
-{% if page %}
-  {% if page.og_image %}
-    {% set cover_image = SITEURL + "/" + page.og_image %}
-  {% elif page.cover %}
-    {% set cover_image = SITEURL + "/" + page.cover %}
-  {% endif %}
-{% elif COVER_IMAGES and "index" in COVER_IMAGES %}
+{% if COVER_IMAGES and "index" in COVER_IMAGES %}
   {% set cover_image = SITEURL + "/" + COVER_IMAGES["index"] %}
 {% endif %}
 
@@ -28,22 +22,12 @@
   <meta property="fb:admins" content="{{ admin }}" />
 {% endfor %}
 <meta property="og:site_name" content="{{ SITENAME }}"/>
-<meta property="og:type" content="blog"/>
+<meta property="og:type" content="website"/>
 <meta property="og:title" content="{{ SITENAME }}"/>
 <meta property="og:description" content="{{ description }}"/>
 <meta property="og:locale" content="{{ default_locale }}"/>
 <meta property="og:url" content="{{ SITEURL }}/"/>
 <meta property="og:image" content="{{ cover_image }}">
-
-{% if page %}
-  {% if page.og_width %}
-  <meta property="og:image:width" content="{{ page.og_width }}">
-  {% endif %}
-
-  {% if page.og_height %}
-  <meta property="og:image:height" content="{{ page.og_height }}">
-  {% endif %}
-{% endif %}
 
 <!-- Twitter Card -->
 {% for name,link in SOCIAL if name.lower() in ['twitter'] %}
