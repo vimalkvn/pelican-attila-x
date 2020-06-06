@@ -2,52 +2,44 @@
 
 {% block title %}{{ SITENAME }} - Archives for {{ period | reverse | join (' ') }}{% endblock %}
 
-{% if HEADER_COVER %}
-  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = HEADER_COVER %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
-  {% endif %}
+{% if COVER_IMAGES and "period_archives" in COVER_IMAGES %}
+  {% set cover_image = SITEURL + "/" + COVER_IMAGES["period_archives"] %}
 {% endif %}
 
 {% block header %}
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="blog-header{% if selected_cover %} has-cover{% endif %}">
+    <header {%if cover_image %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
       <div class="inner">
-        <nav id="navigation">
-          {% if SITE_LOGO %}
-            <span class="blog-logo">
-                <a href="{{ SITEURL }}/"><img src="{{SITE_LOGO}}" alt="Blog Logo" /></a>
-            </span>
-          {% else %}
-            <span id="home-button" class="nav-button">
-                <a class="home-button" href="{{ SITEURL }}/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
-            </span>
-          {% endif %}
-          <span id="menu-button" class="nav-button">
-            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+        <div class="archive archive-tag box archive-box">
+          <span class="archive-info">
+            <span class="archive-type">Archive</span>
+            <span class="archive-count">{{ articles|count }} {% if articles|count > 1 %} Posts {% else %} Post {% endif %}</span>
           </span>
-        </nav>
-        <h1 class="post-title">Archives for {{ period | reverse | join (' ') }}</h1>
-        {% if selected_cover %}
-          <div class="blog-cover cover" style="background-image: url('{{ selected_cover }}')">
-        {% elif selected_color %}
-          <div class="blog-cover cover" style="background-color: {{ selected_color }}">
+          <h2 class="archive-title">{{ period | reverse | join (' ') }}</h2>
+        </div>
+        {% if cover_image %}
+          <div class="post-cover cover">
+            <img src="{{ cover_image }}" alt="Archives for {{ SITEURL }}" />
+          </div>
         {% endif %}
       </div>
     </header>
 {% endblock header %}
 
 {% block content %}
+<div id="index" class="container">
+<main class="content" role="main">
   <article class="post">
     <div class="inner">
+    <section class="post-content">
       <dl>
       {% for article in dates %}
-          <dt>{{ article.locale_date }}</dt>
+          <dt>{{ article.date | strftime('%d %B %Y') }}</dt>
           <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
       {% endfor %}
       </dl>
-    </div>
+    </section>
+    </div>    
   </article>
+  </main>
+  </div>
 {% endblock content %}
