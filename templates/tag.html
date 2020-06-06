@@ -4,12 +4,12 @@
 
 {% if COVER_IMAGES and "tags" in COVER_IMAGES %}
   {% if tag in COVER_IMAGES["tags"] %}
-    {% set selected_cover = SITEURL + "/" + COVER_IMAGES["tags"][tag] %}
+    {% set cover_image = SITEURL + "/" + COVER_IMAGES["tags"][tag] %}
   {% endif %}
 {% endif %}
 
 {% block header %}
-    <header {%if selected_cover %}class="blog-header has-cover"{% else %}class="blog-header"{% endif %}>
+    <header {%if cover_image %}class="blog-header has-cover"{% else %}class="blog-header"{% endif %}>
       <div class="inner">
         <div class="archive archive-tag box archive-box">
           <span class="archive-info">
@@ -19,10 +19,10 @@
           <h2 class="archive-title">{{ tag }}</h2>
         </div>
     
-        {% if selected_cover %}
+        {% if cover_image %}
         <div class="blog-cover cover">
           <img
-          src="{{ selected_cover }}"
+          src="{{ cover_image }}"
           alt="{{ SITENAME }}" />
         </div>
         {% endif %}
