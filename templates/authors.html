@@ -3,17 +3,16 @@
 {% block title %}{{ SITENAME }} - Authors{% endblock title %}
 
 {% if COVER_IMAGES and "authors" in COVER_IMAGES %}
-{% set selected_cover = SITEURL + "/" + COVER_IMAGES["authors"] %}
+{% set cover_image = SITEURL + "/" + COVER_IMAGES["authors"] %}
 {% endif %}
 
-
 {% block header %}
-<header {%if selected_cover %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
+<header {%if cover_image %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
   <div class="inner">
     <h1 class="post-title">Authors</h1>
-    {% if selected_cover %}
+    {% if cover_image %}
     <div class="post-cover cover">
-      <img src="{{ selected_cover }}" alt="Authors on {{ SITEURL }}" />
+      <img src="{{ cover_image }}" alt="Authors on {{ SITEURL }}" />
     </div>
     {% endif %}
   </div>
