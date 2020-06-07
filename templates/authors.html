@@ -26,15 +26,11 @@
       <section class="post-content">
         <p>
           {% for author, articles in authors|sort %}
-          {% set author_name = author.name | title  %}
-          {% if AUTHORS_BIO and author.name.lower() in AUTHORS_BIO %}
-          {% set author_name = AUTHORS_BIO[author.name.lower()].name or author.name %}
-          {% endif %}
-          <a href="{{ SITEURL }}/{{ author.url }}" rel="bookmark">{{ author_name }}</a>
-          <small>({{ articles|count }})</small><br />
-          {% if not loop.last %}
-          <hr>
-          {% endif %}
+          <a href="{{ SITEURL }}/{{ author.url }}" rel="bookmark">{{ author }}</a>
+          <small>({{ articles | count }})</small><br />
+            {% if not loop.last %}
+              <hr>
+            {% endif %}
           {% endfor %}
         </p>
       </section>
