@@ -279,8 +279,7 @@ textarea {
 		position: relative;
 		margin: 0 1px;
 		padding: 4px 8px;
-		font-family: monospace, sans-serif;
-		font-size: 0.75em;
+		font-family: Inconsolata, monospace, sans-serif;
 		font-weight: 400;
 		background: $color-background;
 		border: 1px solid $color-border;
@@ -297,7 +296,7 @@ textarea {
 		margin: 0 0 4rem;
 		padding: 1em;
 		overflow: hidden;
-		font-family: monospace, sans-serif;
+		font-family: Inconsolata, monospace, sans-serif;
 		white-space: pre;
 		background: $color-background;
 		border: 1px solid $color-border;
@@ -317,7 +316,6 @@ textarea {
 		padding: 1.33334em 0;
 		border-right: 1px solid $color-border;
 		color: $color-text-secondary;
-		font-size: 0.75em;
 		line-height: 2em;
 		text-align: right;
 		box-sizing: border-box;
@@ -344,7 +342,6 @@ textarea {
 /* 		margin: -1.33334em -1.33334em -1.33334em 1.33334em; */
 /* 		padding: 1.33334em; */
 		overflow-x: auto;
-		font-size: 0.75em;
 		line-height: 2em;
 		white-space: pre;
 		background: transparent;
