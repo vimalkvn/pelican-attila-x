@@ -52,17 +52,13 @@
         <div class="post-meta">
           <div class="post-meta-avatars">
             {% for author in article.authors %}
-                {% set author_name = author.name.lower() %}
-
-                {% if AUTHORS_BIO and author_name in AUTHORS_BIO %}
-                    {% set author_fullname = AUTHORS_BIO[author_name].name %}
-
-                    {% if AUTHORS_BIO[author_name].image %}
-                    {% set author_image = AUTHORS_BIO[author_name].image %}
+                {% if AUTHORS and author.name in AUTHORS %}
+                  {% set author_data = AUTHORS[author.name] %}
+                    {% if author_data.avatar %}
+                      {% set avatar_image = SITEURL + "/" + author_data.avatar %}
                     <figure class="post-meta-avatar avatar">
-
                     <a href="{{ SITEURL }}/{{ author.url }}"  class="author-avatar">
-                      <img class="author-profile-image" src="{{ SITEURL }}/{{ author_image }}" alt="{{ author_name }}" />
+                      <img class="author-profile-image" src="{{ avatar_image }}" alt="{{ author }}" />
                     </a>
                   </figure>
                     {% endif %}
