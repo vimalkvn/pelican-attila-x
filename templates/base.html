@@ -94,7 +94,7 @@
     <div class="nav-footer">
       <nav class="nav-wrapper" aria-label="Footer">
         <span class="nav-copy"><a href="{{ SITEURL }}/">{{SITENAME}}</a> &copy; 2020</span>
-        <span class="nav-credits">Powered by <a href="https://github.com/getpelican/pelican">Pelican</a> &bull; 
+        <span class="nav-credits">Powered by <a href="https://github.com/getpelican/pelican">Pelican</a> &bull;
           <a href="https://github.com/vimalkvn/pelican-attila-x">Attila-X</a></span>
 		  </nav>
      </div>
@@ -112,10 +112,11 @@
     <script type="text/javascript"  src="{{ js }}"></script>
     {% endfor %}
   {% endif %}
-  
+
   {% block scripts %}
   <!-- Additional javascript from individual templates -->
   {% endblock scripts %}
 
+  {% include 'partials/indieweb.html' %}
 </body>
 </html>

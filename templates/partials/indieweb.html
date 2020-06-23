@@ -1,0 +1,47 @@
+{% if INDIEWEB %}
+<section style="display: none;" class="h-card">
+
+  <!-- About me -->
+  {% if INDIEWEB['p-name'] %}
+  <span class="p-name">{{ INDIEWEB['p-name'] }}</span>
+  {% endif %}
+
+  {% if INDIEWEB['p-note'] %}
+  <span class="p-note">{{ INDIEWEB['p-note'] }}</span>
+  {% endif %}
+
+  <!-- Profile picture -->
+  {% if INDIEWEB['u-photo'] %}
+  <img class="u-photo" src="{{ INDIEWEB['u-photo'] }}"/>
+  {% endif %}
+
+  <!-- My location -->
+  {% if INDIEWEB['p-locality'] %}
+  <span class="p-locality">{{ INDIEWEB['p-locality'] }}</span>
+  {% endif %}
+
+  <!-- Links -->
+  {% if INDIEWEB['u-uid'] %}
+  <a class="u-url u-uid" href="{{ INDIEWEB['u-uid'] }}"></a>
+  {% endif %}
+
+  {% if INDIEWEB["u-email"] %}
+  <a class="u-email" rel="me" href="mailto:{{ INDIEWEB['u-email'] }}"></a>
+  {% endif %}
+
+  {% if INDIEWEB['urls'] %}
+    {% for url in INDIEWEB['urls'] %}
+  <a class="u-url" rel="me" href="{{ url }}"></a>
+    {% endfor %}
+  {% endif %}
+
+
+  <!-- Categories -->
+  {% if INDIEWEB['categories'] %}
+    {% for category in INDIEWEB['categories'] %}
+  <span class="p-category">{{ category }}</span>
+    {% endfor %}
+  {% endif %}
+
+</section>
+{% endif %}
