@@ -2,13 +2,15 @@
 
 {% block title %}{{ SITENAME }} - Posts tagged with {{ tag }}{% endblock %}
 
-{% if COVER_IMAGES and "tags" in COVER_IMAGES %}
-  {% if tag in COVER_IMAGES["tags"] %}
-    {% set cover_image = SITEURL + "/" + COVER_IMAGES["tags"][tag] %}
-  {% endif %}
-{% endif %}
-
 {% block header %}
+  {% set cover_image = '' %}
+  {% if COVER_IMAGES and 'tag' in COVER_IMAGES %}
+    {% if tag in COVER_IMAGES['tag'] %}
+      {% if COVER_IMAGES['tag'][tag] | length > 0 %}
+        {% set cover_image = SITEURL ~ '/' ~ COVER_IMAGES['tag'][tag] %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
     <header {%if cover_image %}class="blog-header has-cover"{% else %}class="blog-header"{% endif %}>
       <div class="inner">
         <div class="archive archive-tag box archive-box">

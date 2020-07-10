@@ -6,15 +6,14 @@
     {% include 'partials/jsonld.html' %}
 {% endblock %}
 
-{% set selected_cover = "" %}
-{% if COVER_IMAGES and "index" in COVER_IMAGES %}
-  {% set selected_cover = SITEURL + "/" + COVER_IMAGES["index"] %}
-{% endif %}
-
 {% block header %}
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="blog-header{% if selected_cover %} has-cover{% endif %}">
+  {% set cover_image = '' %}
+  {% if COVER_IMAGES %}
+    {% if 'index' in COVER_IMAGES %}
+      {% set cover_image = SITEURL ~ '/' ~ COVER_IMAGES['index'] %}
+    {% endif %}
+  {% endif %}
+    <header class="blog-header{% if cover_image %} has-cover{% endif %}">
       <div class="inner">
         <div class="box blog-box">
           <h1 class="blog-name">{{ SITENAME }}</h1>
@@ -23,9 +22,9 @@
           {% endif %}
         </div>
 
-        {% if selected_cover %}
+        {% if cover_image %}
           <div class="blog-cover cover">
-            <img src="{{ selected_cover }}" alt="{{ SITENAME }}" />
+            <img src="{{ cover_image }}" alt="{{ SITENAME }}" />
           </div>
         {% endif %}
     </header>

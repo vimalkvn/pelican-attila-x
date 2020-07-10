@@ -2,13 +2,15 @@
 
 {% block title %}{{ SITENAME }} - Articles in the {{ category }} category{% endblock %}
 
-{% if COVER_IMAGES and "categories" in COVER_IMAGES %}
-  {% if category in COVER_IMAGES["categories"] %}
-    {% set cover_image = SITEURL + "/" + COVER_IMAGES["categories"][category] %}
-  {% endif %}
-{% endif %}
-
 {% block header %}
+  {% set cover_image = '' %}
+  {% if COVER_IMAGES and 'category' in COVER_IMAGES %}
+    {% if category in COVER_IMAGES['category'] %}
+      {% if COVER_IMAGES['category'][category] | length > 0 %}
+        {% set cover_image = SITEURL ~ '/' ~ COVER_IMAGES['category'][category] %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
     <header {%if cover_image %}class="blog-header has-cover"{% else %}class="blog-header"{% endif %}>
       <div class="inner">
         <div class="archive archive-tag box archive-box">

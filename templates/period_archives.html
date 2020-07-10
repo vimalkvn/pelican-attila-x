@@ -2,11 +2,15 @@
 
 {% block title %}{{ SITENAME }} - Archives for {{ period | reverse | join (' ') }}{% endblock %}
 
-{% if COVER_IMAGES and "period_archives" in COVER_IMAGES %}
-  {% set cover_image = SITEURL + "/" + COVER_IMAGES["period_archives"] %}
-{% endif %}
-
 {% block header %}
+  {% set cover_image = '' %}
+  {% if COVER_IMAGES %}
+    {% if 'period_archives' in COVER_IMAGES %}
+      {% if COVER_IMAGES['period_archives'] | length > 0 %}
+        {% set cover_image = SITEURL ~ '/' ~ COVER_IMAGES['period_archives'] %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
     <header {%if cover_image %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
       <div class="inner">
         <div class="archive archive-tag box archive-box">

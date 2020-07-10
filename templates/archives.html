@@ -2,11 +2,15 @@
 
 {% block title %}{{ SITENAME }} - Archives{% endblock %}
 
-{% if COVER_IMAGES and "archives" in COVER_IMAGES %}
-  {% set cover_image = SITEURL + "/" + COVER_IMAGES["archives"] %}
-{% endif %}
-
 {% block header %}
+  {% set cover_image = '' %}
+  {% if COVER_IMAGES %}
+    {% if 'archives' in COVER_IMAGES %}
+      {% if COVER_IMAGES['archives'] | length > 0 %}
+        {% set cover_image = SITEURL ~ '/' ~ COVER_IMAGES['archives'] %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
     <header {%if cover_image %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
       <div class="inner">
         <h1 class="post-title">Archives</h1>
