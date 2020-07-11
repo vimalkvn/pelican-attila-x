@@ -17,6 +17,9 @@
           <a href="{{ link }}"><span>{{ title }}</span></a>
         </li>
         {% endfor %}
+        {% if FORMSPREE_ID %}
+        <li><a href="{{ SITEURL }}/contact">Contact</a></li>
+        {% endif %}
       </ul>
 
 
