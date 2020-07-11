@@ -10,7 +10,9 @@
   {% set cover_image = '' %}
   {% if COVER_IMAGES %}
     {% if 'index' in COVER_IMAGES %}
-      {% set cover_image = SITEURL ~ '/' ~ COVER_IMAGES['index'] %}
+      {% if COVER_IMAGES['index'] | length > 0 %}
+        {% set cover_image = SITEURL ~ '/' ~ COVER_IMAGES['index'] %}
+      {% endif %}
     {% endif %}
   {% endif %}
     <header class="blog-header{% if cover_image %} has-cover{% endif %}">

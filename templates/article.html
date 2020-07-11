@@ -2,8 +2,8 @@
 
 {% block title %}{{ article.title }}{% endblock %}
 
-{% if article.cover %}
-    {% set cover_image = SITEURL + "/" + article.cover %}
+{% if article.cover and article.cover | length > 0 %}
+  {% set cover_image = SITEURL ~ '/' ~ article.cover %}
 {% endif %}
 
 {% block canonical_url %}<link href="{{ SITEURL }}/{{ article.url }}" rel="canonical" />{% endblock canonical_url %}

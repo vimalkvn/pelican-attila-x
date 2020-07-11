@@ -11,8 +11,8 @@
 <link href="{{ SITEURL }}/{{ page.url }}" rel="canonical" />
 {% endblock canonical_url %}
 
-{% if page.cover %}
-    {% set cover_image = SITEURL + "/" + page.cover %}
+{% if page.cover and page.cover | length > 0 %}
+    {% set cover_image = SITEURL ~ '/' ~ page.cover %}
 {% endif %}
 
 {% block header %}
