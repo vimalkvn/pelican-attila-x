@@ -55,7 +55,7 @@
         </div>
     
         {% if cover_image %}
-        <div class="blog-cover cover">
+        <div class="post-cover cover">
           <img 
           src="{{ cover_image }}"
           alt="{{ SITENAME }}" />
@@ -68,7 +68,7 @@
 {% block content %}
 <div id="index" class="container">
   <main class="content" role="main">
-    {% include "partials/loop.html" %}
+  {% include "partials/loop.html" %}
   </main>
 </div>
 {% endblock content %}

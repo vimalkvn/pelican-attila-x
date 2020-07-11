@@ -29,17 +29,18 @@
 {% endblock header %}
 
 {% block content %}
-  <main class="content" role="main">
-      <article class="post">
-      <div class="inner">
-          <section class="post-content">
-              {{page.content}}
-          </section>
-          {% block share_section %}{% endblock %}
-          {% block comments_section %}{% endblock %}
-      </div>
-      </article>
-  </main>
+<main class="content" role="main">
+  <article class="post">
+    <div class="inner">
+      <section class="post-content">
+          {{page.content}}
+          {% block contact_section %}{% endblock %}
+      </section>
+      {% block share_section %}{% endblock %}
+      {% block comments_section %}{% endblock %}
+    </div>
+  </article>
+</main>
 {% endblock content %}
 {% block scripts %}
 <script>

@@ -28,18 +28,16 @@
   <article class="post">
     <div class="inner">
       <section class="post-content">
-      <p>
-      There are blog posts in the following categories:
-      </p>
-      <p>
-      {% for category, articles in categories | sort %}
-          <a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a> 
-          <small>({{ articles|count }})</small>
-        <br />
-      {% endfor %}
-    </p>
+        <h2>There are blog posts in the following categories</h2>
+        <p>
+        {% for category, articles in categories | sort %}
+            <a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
+            <small>({{ articles|count }})</small>
+          <br />
+        {% endfor %}
+        <p>
       </section>
-      </div>
-      </article>
+    </div>
+  </article>
 </main>
 {% endblock content %}

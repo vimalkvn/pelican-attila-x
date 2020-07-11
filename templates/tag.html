@@ -11,7 +11,7 @@
       {% endif %}
     {% endif %}
   {% endif %}
-    <header {%if cover_image %}class="blog-header has-cover"{% else %}class="blog-header"{% endif %}>
+    <header {%if cover_image %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
       <div class="inner">
         <div class="archive archive-tag box archive-box">
           <span class="archive-info">
@@ -22,7 +22,7 @@
         </div>
     
         {% if cover_image %}
-        <div class="blog-cover cover">
+        <div class="post-cover cover">
           <img
           src="{{ cover_image }}"
           alt="{{ SITENAME }}" />
