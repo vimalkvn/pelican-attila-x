@@ -1,8 +1,8 @@
 <div class="nav-header">
   <nav class="nav-wrapper" aria-label="Main">
-      {% if SITELOGO %}
+      {% if SITE_LOGO %}
       <span class="logo">
-        <a href="{{ SITEURL }}" title="Home"><img src="{{ SITEURL }}/{{ SITELOGO }}" alt="Logo"/></a>
+        <a href="{{ SITEURL }}" title="Home"><img src="{{ SITEURL }}/{{ SITE_LOGO }}" alt="Logo"/></a>
       </span>
       {% endif %}
 
@@ -40,7 +40,7 @@
   <div class="nav-wrapper-control">
     <div class="inner">
       <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
-      <!-- <a class="nav-search" style="display: none;" title="Search" role="button"><i class="icon icon-search" aria-hidden="true"></i><span>Search</span></a> -->
+      <a class="nav-search" title="Search" role="button"><i class="icon icon-search" aria-hidden="true"></i></a>
     </div>
   </div>
 </div>

@@ -11,14 +11,14 @@
   <meta name="google-site-verification" content="{{ GOOGLE_SITE_VERIFICATION }}">
   {% endif %}
 
-  <title>{% block title %}{{ SITENAME }}{% if SITESUBTITLE and SHOW_SITESUBTITLE_IN_HTML %} - {{ SITESUBTITLE }}{% endif %}{% endblock title %}</title>
+  <title>{% block title %}{{ SITENAME }}{% if SITESUBTITLE %} - {{ SITESUBTITLE }}{% endif %}{% endblock title %}</title>
 
-  {% if SITE_DESCRIPTION %}
-  <meta name="description" content="{{SITE_DESCRIPTION}}" />
+  {% if SITESUBTITLE %}
+  <meta name="description" content="{{SITESUBTITLE}}" />
   {% endif %}
 
-  {% if SITELOGO %}
-    <link rel="icon" href="{{ SITEURL }}/{{ SITELOGO }}">
+  {% if SITE_LOGO %}
+    <link rel="icon" href="{{ SITEURL }}/{{ SITE_LOGO }}">
   {% endif %}
 
   <meta name="HandheldFriendly" content="True" />
