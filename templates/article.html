@@ -106,8 +106,13 @@
         </aside>
       {% endif %}
       </section>
+      {% if MAILCHIMP_URL and MAILCHIMP_USER and MAILCHIMP_FORM_ID %}
+        {% include 'services/mailchimp.html' %}
+      {% endif %}
+
       {% include 'services/comments.html' %}
 
+      {% if article.next_article or article.prev_article %}
       <aside class="post-nav">
           {% if article.next_article %}
           <a class="post-nav-next" href="{{ SITEURL }}/{{ article.next_article.url}}">
@@ -131,6 +136,7 @@
           {% endif %}
           <div class="clear"></div>
       </aside>
+      {% endif %}
     </div>
   </article>
 </main>

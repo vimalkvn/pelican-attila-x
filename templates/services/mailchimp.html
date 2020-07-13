@@ -1,0 +1,14 @@
+<section class="post-subscribe">
+    <h3>Subscribe to {{ SITENAME }}</h3>
+    <p>Get the latest posts delivered right to your inbox</p>
+    <form method="post" action="{{ MAILCHIMP_URL }}" class="post-subscribe-form" target="_blank" novalidate>
+        <div class="form-group">
+            <input name="EMAIL" id="mce-EMAIL" class="post-subscribe-input" placeholder="youremail@example.com" autocomplete="false" />
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_{{ MAILCHIMP_USER }}_{{ MAILCHIMP_FORM_ID }}" tabindex="-1" value=""></div>
+        </div>
+            <button class="post-subscribe-button" type="submit" name="subscribe" id="mc-embedded-subscribe">
+                <span>Subscribe</span>
+            </button>
+    </form>
+</section>
+

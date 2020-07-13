@@ -2013,16 +2013,25 @@ textarea {
 	padding: 4rem 0;
 	margin: 1em 0;
 	text-align: center;
-	background: $color-neutral-25;
-	color: $color-neutral-80;
+	background: $color-form-background;
+	color: $color-text-primary;
 	box-sizing: border-box;
 	border-radius: 2px;
 
 	p {
 		max-width: 13.33334em;
 		margin: 0 auto 1.33334em;
-		font-size: 1.2em;
-		line-height: 1.33334em;
+		font-size: 2rem;
+		line-height: 3.3rem;
+	}
+
+	h3 {
+		margin: 0 0 3px;
+		padding: 0;
+		color: #15171a;
+		font-size: 3.5rem;
+		line-height: 1;
+		font-weight: 600;
 	}
 
 	.post-subscribe-form {
@@ -2031,8 +2040,8 @@ textarea {
 
 		.post-subscribe-input {
 			width: 100%;
-			font-size: 0.8em;
-			height: 2.5em;
+			font-size: 1.8rem;
+			height: 3.3rem;
 			padding: 0 0.25em 0 1.25em;
 			border: 0;
 			border-right: none;
@@ -2046,8 +2055,8 @@ textarea {
 
 		.post-subscribe-button {
 			display: inline-block;
-			font-size: 0.8em;
-			height: 2.5em;
+			font-size: 1.8rem;
+			height: 3.3rem;
 			padding: 0 1.25em 0 1em;
 			font-weight: 500;
 			color: #FFF;

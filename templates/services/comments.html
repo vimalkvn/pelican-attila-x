@@ -1,10 +1,12 @@
 {% if SITEURL and (article and article.status != "draft") or (page and page.status != "draft") %}
-<section class="post-comments">
   {% if COMMENTO_ENABLED %}
+  <section class="post-comments">
       <script defer src="https://cdn.commento.io/js/commento.js" data-no-fonts="true"></script>
       <noscript>Please enable JavaScript to view the comments.</noscript>
       <div id="commento"></div>
+  </section>
   {% elif DISQUS_SITENAME %}
+  <section class="post-comments">
       <div class="comments">
         <div id="disqus_thread"></div>
         <script type="text/javascript">
@@ -24,7 +26,7 @@
         </script>
         <noscript>Please enable JavaScript to view the comments.</noscript>
       </div>
+  </section>
   {% endif %}
-</section>
 {% endif %}
 
