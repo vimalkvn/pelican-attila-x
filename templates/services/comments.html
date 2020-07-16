@@ -1,5 +1,5 @@
 {% if SITEURL and (article and article.status != "draft") or (page and page.status != "draft") %}
-  {% if COMMENTO_ENABLED %}
+  {% if ENABLE_COMMENTO %}
   <section class="post-comments">
       <script defer src="https://cdn.commento.io/js/commento.js" data-no-fonts="true"></script>
       <noscript>Please enable JavaScript to view the comments.</noscript>
