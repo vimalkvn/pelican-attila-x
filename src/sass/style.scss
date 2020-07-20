@@ -81,13 +81,12 @@ textarea {
 		}
 
 		a.headerlink {
-			display: inline-block;
-			margin-left: 1rem;
+			margin: 0.5rem -2rem;
+			float: left;
 			font-size: 0.6em;
-			font-weight: 500;
+			font-weight: 400;
 			line-height: 2rem;
 			text-align: center;
-			vertical-align: middle;
 			text-decoration: none;
 			color: $color-neutral-80;
 			transition: all ease 0.2s;
@@ -321,7 +320,7 @@ textarea {
 		height: 100%;
 		left: 0;
 		top: 0;
-		padding: 1.33334em 0;
+		padding: 1em 0;
 		border-right: 1px solid $color-border;
 		color: $color-text-secondary;
 		line-height: 2em;
@@ -346,9 +345,8 @@ textarea {
 		display: block;
 		position: static;
 		top: auto;
-        /* disable margin and padding until pygments line number formatting is fixed */
-/* 		margin: -1.33334em -1.33334em -1.33334em 1.33334em; */
-/* 		padding: 1.33334em; */
+		margin: -1.33334em -1.33334em -1em 1.5em;
+		padding: 1.33334em;
 		overflow-x: auto;
 		line-height: 2em;
 		white-space: pre;
