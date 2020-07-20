@@ -110,7 +110,10 @@
         {% include 'services/mailchimp.html' %}
       {% endif %}
 
-      {% include 'services/comments.html' %}
+      {# Ignore comments if set in article metadata #}
+      {% if article.comments != "disable" %}
+       {% include 'services/comments.html' %}
+      {% endif %}
 
       {% if article.next_article or article.prev_article %}
       <aside class="post-nav">
