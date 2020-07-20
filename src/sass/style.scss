@@ -14,8 +14,9 @@ $inner: calc(64rem + 8vw);
    Basics
    ========================================================================== */
 :root {
-	--font-primary: 'Lato', sans-serif;
-	--font-secondary: 'Merriweather', serif;
+	--font-sans: Lato, sans-serif;
+	--font-serif: Merriweather, serif;
+	--font-monospace: Inconsolata, monospace, sans-serif;
 }
 
 html {
@@ -29,7 +30,7 @@ html.menu-active {
 }
 
 body {
-	font-family: var(--font-primary);
+	font-family: var(--font-sans);
 	font-size: 1em;
 	line-height: 1.5em;
 	font-weight: 400;
@@ -136,14 +137,14 @@ textarea {
 	}
 
 	p {
-		font-family: var(--font-secondary);
+		font-family: var(--font-serif);
 		font-weight: 300;
 		margin: 0 0 4rem;
 	}
 
 	ol,
 	ul {
-		font-family: var(--font-secondary);
+		font-family: var(--font-serif);
 		font-weight: 300;
 		margin: 0 0 4rem;
 		padding-left: 2em;
@@ -167,7 +168,7 @@ textarea {
 		font-weight: 400;
 		line-height: 3.3rem;
 		text-align: right;
-		font-family: var(--font-primary);
+		font-family: var(--font-sans);
 	}
 
 	ul > li:before {
@@ -206,7 +207,7 @@ textarea {
 	}
 
 	blockquote {
-		font-family: var(--font-secondary);
+		font-family: var(--font-serif);
 		margin: 0 0 4rem;
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
@@ -249,7 +250,7 @@ textarea {
 	}
 
 	dl {
-		font-family: var(--font-secondary);
+		font-family: var(--font-serif);
 		margin: 0 0 4rem;
 		padding-left: 30px;
 	}
@@ -286,7 +287,7 @@ textarea {
 		position: relative;
 		margin: 0 1px;
 		padding: 4px 8px;
-		font-family: Inconsolata, monospace, sans-serif;
+		font-family: var(--font-monospace);
 		font-weight: 400;
 		background: $color-background;
 		border: 1px solid $color-border;
@@ -303,7 +304,7 @@ textarea {
 		margin: 0 0 4rem;
 		padding: 1em;
 		overflow: hidden;
-		font-family: Inconsolata, monospace, sans-serif;
+		font-family: var(--font-monospace);
 		white-space: pre;
 		background: $color-background;
 		border: 1px solid $color-border;
@@ -866,7 +867,7 @@ textarea {
 }
 
 .blog-description {
-	font-family: var(--font-secondary);
+	font-family: var(--font-serif);
 	font-weight: 300;
 	display: block;
 	margin-top: 1rem;
@@ -937,7 +938,7 @@ textarea {
 		font-size: 2em;
 		line-height: 1.5em;
 		margin: 1rem 0;
-		font-family: var(--font-secondary);
+		font-family: var(--font-serif);
 		color: $color-text-secondary;
 		@media (prefers-color-scheme: dark) {
 			color: $color-text-secondary-dark;
@@ -1878,7 +1879,7 @@ textarea {
 
 .post-excerpt {
 	margin: 1em 0 0;
-	font-family: var(--font-secondary);
+	font-family: var(--font-serif);
 	font-size: 2em;
 	font-weight: 300;
 	line-height: 1.5em;
@@ -2304,7 +2305,7 @@ textarea {
 .post-nav-excerpt {
 	height: 5rem;
 	margin: 0 0 1rem;
-	font-family: var(--font-secondary);
+	font-family: var(--font-serif);
 	font-size: 1.75em;
 	line-height: 2.5rem;
 	display: -webkit-box;

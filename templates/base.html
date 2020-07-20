@@ -80,6 +80,46 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   {% block opengraph %}{% endblock opengraph %}
+  
+  {% if FONTS is defined %}
+    {% if 'sans' in FONTS %}
+      {% set font_sans = FONTS['sans'] %}
+      <link href="https://fonts.googleapis.com/css2?family={{ font_sans | replace(' ', '+')}}&display=swap" rel="stylesheet">
+    {% endif %}
+    {% if 'serif' in FONTS %}
+      {% set font_serif = FONTS['serif'] %}
+      <link href="https://fonts.googleapis.com/css2?family={{ font_serif | replace(' ', '+')}}&display=swap" rel="stylesheet">
+    {% endif %}
+    {% if 'monospace' in FONTS %}
+      {% set font_monospace = FONTS['monospace'] %}
+      <link href="https://fonts.googleapis.com/css2?family={{ font_monospace | replace(' ', '+')}}&display=swap" rel="stylesheet">
+    {% endif %}
+  {% endif %}
+    
+  <style>
+    :root {
+        {% if font_sans is defined %}
+        --font-sans: "{{ font_sans }}", sans-serif;
+        {% endif %}
+        
+        {% if font_serif is defined %}
+        --font-serif: "{{ font_serif }}", serif;
+        {% endif %}
+        
+         {% if font_monospace is defined %}
+        --font-monospace: "{{ font_monospace }}", monospace;
+        {% endif %}
+        
+        {% if COLORS is defined %}
+          {% if 'primary' in COLORS %}
+          --color-primary: {{ COLORS['primary'] }};
+          {% endif %}
+          {% if 'primary-active' in COLORS %}
+          --color-primary-active: {{ COLORS['primary-active'] }};
+          {% endif %}
+        {% endif %}
+    }
+  </style>
   {% endblock head %}
 
 </head>
