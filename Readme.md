@@ -2,8 +2,8 @@
 This is a modified version of the [Pelican](https://github.com/getpelican/pelican) [attila](https://github.com/arulrajnet/attila) theme by Arulraj V. [Original theme](https://github.com/zutrinken/attila) is made for the Ghost blogging platform by Peter Amende.
 
 ## Demo
-* [My website]((https://vimaltech.com)
-* [Skyrocket]((https://skyrocket.vimaltech.com) — template based on this theme
+* [My website](https://vimaltech.com)
+* [Skyrocket](https://skyrocket.vimaltech.com) — template based on this theme
 
 
 ## Features
