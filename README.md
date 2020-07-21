@@ -106,7 +106,7 @@ COVER_IMAGES = {
 ### COLORS
 Use an alternate color scheme. `primary` is used for links and `primary-active` is used for link hover state.
 
-```
+```python
 COLORS = {
     'primary': '#e63946',
     'primary-active': '#457b9d' 
@@ -127,7 +127,7 @@ Theme includes (and uses) these fonts by default:
 
 If you prefer to use alternative fonts, you can set them here:
 
-```
+```python
 FONTS = {
     'sans': 'Roboto',
     'serif': 'Lora'
@@ -142,28 +142,28 @@ FONTS = {
 ### DISQUS_SITENAME
 If you wish to use Disqus comments, uncomment and set this value to your site name
 
-```
+```python
 #DISQUS_SITENAME = ''
 ```
 
 ### ENABLE_COMMENTO
 Alternatively, if you use commento for comments, uncomment this setting
 
-```
+```python
 #ENABLE_COMMENTO = True
 ```
 
 ### GOOGLE_ANALYTICS
 If you wish to use Google Analytics, uncomment and set this value to your Google analytics ID i.e., UA-XXXXXXX
 
-```
+```python
 #GOOGLE_ANALYTICS = 'UA-XXXXXX'
 ```
 
 ### FORMSPREE_ID
 To enable contact form, uncomment and set this value to your Formspree form ID
 
-```
+```python
 #FORMSPREE_ID = 'abcdefg'
 ```
 
@@ -171,7 +171,7 @@ To enable contact form, uncomment and set this value to your Formspree form ID
 To enable users to subscribe to your blog using Mailchimp, uncomment this block and set `MAILCHIMP_URL` to the URL corresponding to your signup form. If you get errors while parsing `MAILCHIMP_USER` and `MAILCHIMP_FORM_ID`, please set
 these variables manually.
 
-```
+```python
 ## START MAILCHIMP BLOCK
 #
 #MAILCHIMP_URL = 'https://example.us4.list-manage.com/subscribe/post?u=1234567893d86023b9abcd&amp;id=6185580190'
