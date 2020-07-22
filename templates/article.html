@@ -44,7 +44,7 @@
           {% endif %}
         </span>
         {% set title = article.title %}
-        <h1 class="post-title">{{ title }}</h1>
+        <h1 class="post-title p-name">{{ title }}</h1>
         <!-- TODO : Proper class for headline -->
         {% if article.headline %}
             <span class="blog-description">{{ article.headline }}</span>
@@ -62,17 +62,15 @@
                     </a>
                   </figure>
                     {% endif %}
-
                 {% endif %}
-
             {% endfor %}
           </div>
           {% for author in article.authors %}
             <h4 class="post-meta-author">{{author.name}}</h4>
           {% endfor %}
-          <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time>
+          <a class="u-url" href="{{ SITEURL }}/{{ article.url }}"><time class="dt-published" datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time></a>
           {% if article.modified %}
-          &bull; Updated <time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time>
+          &bull; Updated <time class="dt-updated" datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time>
           {% endif %}
         </div>
 
@@ -89,7 +87,7 @@
 <main class="content" role="main">
   <article class="post">
     <div class="inner">
-      <section class="post-content">
+      <section class="post-content e-content">
           {{article.content}}
       </section>
 

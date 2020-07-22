@@ -80,7 +80,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
   {% block opengraph %}{% endblock opengraph %}
-  
+
   {% if FONTS is defined %}
     {% if 'sans' in FONTS %}
       {% set font_sans = FONTS['sans'] %}
@@ -95,21 +95,21 @@
       <link href="https://fonts.googleapis.com/css2?family={{ font_monospace | replace(' ', '+')}}&display=swap" rel="stylesheet">
     {% endif %}
   {% endif %}
-    
+
   <style>
     :root {
         {% if font_sans is defined %}
         --font-sans: "{{ font_sans }}", sans-serif;
         {% endif %}
-        
+
         {% if font_serif is defined %}
         --font-serif: "{{ font_serif }}", serif;
         {% endif %}
-        
+
          {% if font_monospace is defined %}
         --font-monospace: "{{ font_monospace }}", monospace;
         {% endif %}
-        
+
         {% if COLORS is defined %}
           {% if 'primary' in COLORS %}
           --color-primary: {{ COLORS['primary'] }};
@@ -125,7 +125,7 @@
 </head>
 <body class="home-template">
   {% include 'partials/navigation.html' %}
-  <section class="page-wrapper">
+  <section class="page-wrapper h-entry">
   {% block header %}{% endblock header %}
   {% block content %}{% endblock content %}
   <div id="search" class="container">
