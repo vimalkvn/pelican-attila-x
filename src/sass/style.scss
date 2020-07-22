@@ -1710,6 +1710,17 @@ textarea {
 	font-size: 2em;
 	line-height: 1em;
 
+	a {
+		display: inline-block;
+		text-decoration: none;
+		color: inherit;
+
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	.post-type {
 		color: $color-primary;
 	}

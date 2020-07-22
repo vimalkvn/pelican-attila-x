@@ -38,9 +38,9 @@
     <header {% if cover_image %}class="post-header has-cover"{% else %}class="post-header"{% endif %}>
       <div class="inner">
         <span class="post-info">
-          <span class="post-type">Blog</span>
           {% if article.tags %}
-          <span class="post-count">{{ article.tags[0] }}</span>
+            {% set primary_tag = article.tags[0] %}
+            <a href="{{ SITEURL }}/{{ primary_tag.url }}" class="post-type p-category">{{ primary_tag | escape}}</a>
           {% endif %}
         </span>
         {% set title = article.title %}
@@ -66,7 +66,7 @@
             {% endfor %}
           </div>
           {% for author in article.authors %}
-            <h4 class="post-meta-author">{{author.name}}</h4>
+            <h4 class="post-meta-author"><a class="u-author" href="{{ SITEURL }}">{{author.name}}</a></h4>
           {% endfor %}
           <a class="u-url" href="{{ SITEURL }}/{{ article.url }}"><time class="dt-published" datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time></a>
           {% if article.modified %}
