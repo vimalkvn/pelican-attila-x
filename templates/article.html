@@ -45,10 +45,6 @@
         </span>
         {% set title = article.title %}
         <h1 class="post-title p-name">{{ title }}</h1>
-        <!-- TODO : Proper class for headline -->
-        {% if article.headline %}
-            <span class="blog-description">{{ article.headline }}</span>
-        {% endif %}
         <div class="post-meta">
           <div class="post-meta-avatars">
             {% for author in article.authors %}
@@ -88,6 +84,10 @@
   <article class="post">
     <div class="inner">
       <section class="post-content e-content">
+          {% if article.introduction %}
+          <p class="post-large-text">{{ article.introduction | striptags}}</p>
+          {% endif %}
+
           {{article.content}}
       </section>
 

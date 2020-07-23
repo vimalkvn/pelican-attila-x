@@ -18,14 +18,16 @@
                     {% endfor %}
                      &bull; <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time>
                 </span>
-            
+
             {% if SHOW_FULL_ARTICLE %}
                 <p class="post-content">
                 {{ article.content }}
                 </section>
             {% else %}
-                <p class="post-excerpt">                
-                    {% if article.has_summary %}
+                <p class="post-excerpt">
+                    {% if article.introduction %}
+                        {{ article.introduction | striptags}}
+                    {% elif article.has_summary %}
                         {{ article.summary }}
                     {% elif article.summary %}
                         {{ article.summary|striptags|truncate(250) }}
@@ -33,7 +35,7 @@
                 </p>
             {% endif %}
             {% include 'services/comments_count.html' %}
-            </div>    
+            </div>
         </div>
         </article>
     {% endfor %}
