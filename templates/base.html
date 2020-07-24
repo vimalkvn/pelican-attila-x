@@ -129,25 +129,7 @@
   {% block header %}{% endblock header %}
   {% block content %}{% endblock content %}
   {% include 'partials/search.html' %}
-  <div class="nav-footer">
-      <nav class="nav-wrapper" aria-label="Footer">
-        <span class="nav-copy"><a href="{{ SITEURL }}/">{{SITENAME}}</a> &copy; 2020</span>
-        <span class="nav-credits">
-        {% if FOOTER_ITEMS is defined %}
-          {% for item, value in FOOTER_ITEMS %}
-            {% if item == 'text' %}
-              {{ value | e }}
-            {% elif item == 'link' %}
-              <a href="{{ value[1] | e}}">{{ value[0] | e}}</a>
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          Powered by <a href="https://github.com/getpelican/pelican">Pelican</a> &bull;
-          <a href="https://gitlab.com/vimalkvn/pelican-attila-x">Attila-X</a>
-        {% endif %}
-        </span>
-     </nav>
-     </div>
+  {% include 'partials/footer.html' %}
   </section>
 
   <script type="text/javascript" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/script.js"></script>
