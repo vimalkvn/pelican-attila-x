@@ -1,0 +1,4 @@
+{% if SITEURL is defined and WEBMENTION_DOMAIN is defined %}
+<link rel="webmention" href="https://webmention.io/{{ WEBMENTION_DOMAIN }}/webmention" />
+<link rel="pingback" href="https://webmention.io/{{ WEBMENTION_DOMAIN }}/xmlrpc" />
+{% endif %}
