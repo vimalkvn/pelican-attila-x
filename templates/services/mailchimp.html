@@ -1,6 +1,15 @@
 <section class="post-subscribe">
+    {% if NEWSLETTER_TITLE is defined %}
+    <h3>{{ NEWSLETTER_TITLE }}</h3>
+    {% else %}
     <h3>Subscribe to {{ SITENAME }}</h3>
+    {% endif %}
+
+    {% if NEWSLETTER_DESCRIPTION is defined %}
+    <p>{{ NEWSLETTER_DESCRIPTION }}</p>
+    {% else %}
     <p>Get the latest posts delivered right to your inbox</p>
+    {% endif %}
     <form method="post" action="{{ MAILCHIMP_URL }}" class="post-subscribe-form" target="_blank" novalidate>
         <div class="form-group">
             <input name="EMAIL" id="mce-EMAIL" class="post-subscribe-input" placeholder="youremail@example.com" autocomplete="false" />
