@@ -103,13 +103,12 @@ COVER_IMAGES = {
 }
 ```
 
-### COLORS
-Use an alternate color scheme. `primary` is used for links and `primary-active` is used for link hover state.
+### COLOR
+Use an alternate color for links:
 
 ```python
 COLORS = {
     'primary': '#e63946',
-    'primary-active': '#457b9d' 
 }
 ```
 
