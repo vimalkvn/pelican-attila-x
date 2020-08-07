@@ -171,6 +171,7 @@ textarea {
 		line-height: 3.3rem;
 		text-align: right;
 		font-family: var(--font-sans);
+		font-variant-numeric: tabular-nums;
 	}
 
 	ul > li:before {
@@ -360,6 +361,10 @@ textarea {
 
 	pre code.language-text {
 		margin-left: -1.33334em;
+	}
+
+	sup {
+		margin-left: 0.2em;
 	}
 
 	kbd {
