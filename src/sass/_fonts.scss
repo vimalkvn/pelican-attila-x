@@ -56,6 +56,15 @@
 }
 
 @font-face {
+    font-family: 'Merriweather';
+    src: url('../font/merriweather-bold-webfont.woff2') format('woff2'),
+         url('../font/merriweather-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Inconsolata';
     src: url('../font/inconsolata-regular-webfont.woff2') format('woff2'),
          url('../font/inconsolata-regular-webfont.woff') format('woff');

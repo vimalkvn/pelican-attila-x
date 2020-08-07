@@ -244,11 +244,7 @@ textarea {
 
 	b,
 	strong {
-		font-weight: 400;
-		color: #040608;
-		@media (prefers-color-scheme: dark) {
-			color: $color-neutral-80;
-		}
+		font-weight: 700;
 	}
 
 	small {
