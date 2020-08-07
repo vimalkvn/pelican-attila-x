@@ -2120,7 +2120,7 @@ textarea {
    ========================================================================== */
 .post-subscribe {
 	position: relative;
-	padding: 4rem 0;
+	padding: 4rem 2rem;
 	margin: 1em 0;
 	text-align: center;
 	background: $color-background;
@@ -2130,7 +2130,6 @@ textarea {
 	border-radius: 2px;
 
 	p {
-		max-width: 13.33334em;
 		margin: 0 auto 1.33334em;
 		font-size: 2rem;
 		line-height: 3.3rem;
@@ -2139,7 +2138,6 @@ textarea {
 	h3 {
 		margin: 0 0 3px;
 		padding: 0;
-		color: #15171a;
 		font-size: 3.5rem;
 		line-height: 1;
 		font-weight: 600;
@@ -2154,7 +2152,6 @@ textarea {
 			font-size: 1.8rem;
 			height: 3.3rem;
 			padding: 0 0.25em 0 1.25em;
-			border: 0;
 			border-right: none;
 			appearance: none;
 			outline: none;
@@ -2162,6 +2159,13 @@ textarea {
 			box-sizing: border-box;
 			border-radius: 4em 0 0 4em;
 			color: $color-neutral-25;
+			border-top: 1px solid $color-neutral-90;
+			border-bottom: 1px solid $color-neutral-90;
+			border-left: 1px solid $color-neutral-90;
+
+			&:focus {
+				border-color: $color-primary;
+			}
 		}
 
 		.post-subscribe-button {
@@ -2171,7 +2175,7 @@ textarea {
 			padding: 0 1.25em 0 1em;
 			font-weight: 500;
 			color: #FFF;
-			background: $color-neutral-60;
+			background: $color-primary;
 			border: 0;
 			appearance: none;
 			outline: none;
@@ -2181,7 +2185,7 @@ textarea {
 
 			&:focus,
 			&:hover {
-				background: $color-primary;
+				background: $color-background-dark;
 			}
 		}
 	}
