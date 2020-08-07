@@ -40,11 +40,23 @@
         <span class="post-info">
           {% if article.tags %}
             {% set primary_tag = article.tags[0] %}
+
+            {% if INDIEWEB is defined %}
             <a href="{{ SITEURL }}/{{ primary_tag.url }}" class="post-type p-category">{{ primary_tag | escape}}</a>
+            {% else %}
+            <a href="{{ SITEURL }}/{{ primary_tag.url }}" class="post-type">{{ primary_tag | escape}}</a>
+            {% endif %}
+
           {% endif %}
         </span>
         {% set title = article.title %}
+
+        {% if INDIEWEB is defined %}
         <h1 class="post-title p-name">{{ title }}</h1>
+        {% else %}
+        <h1 class="post-title">{{ title }}</h1>
+        {% endif %}
+
         <div class="post-meta">
           <div class="post-meta-avatars">
             {% for author in article.authors %}
@@ -62,11 +74,28 @@
             {% endfor %}
           </div>
           {% for author in article.authors %}
+
+            {% if INDIEWEB is defined %}
             <h4 class="post-meta-author"><a href="{{ SITEURL }}" rel="author" class="p-author h-card">{{author.name}}</a></h4>
+            {% else %}
+            <h4 class="post-meta-author"><a href="{{ SITEURL }}" rel="author">{{author.name}}</a></h4>
+            {% endif %}
+
           {% endfor %}
+
+          {% if INDIEWEB is defined %}
           <a class="u-url" href="{{ SITEURL }}/{{ article.url }}"><time class="dt-published" datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time></a>
+          {% else %}
+          <a href="{{ SITEURL }}/{{ article.url }}"><time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time></a>
+          {% endif %}
+
           {% if article.modified %}
-          &bull; Updated <time class="dt-updated" datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time>
+          &centerdot; Updated
+            {% if INDIEWEB is defined %}
+            <time class="dt-updated" datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time>
+            {% else %}
+            <time datetime="{{ article.modified.isoformat() }}">{{ article.modified | strftime('%d %B %Y') }}</time>
+            {% endif %}
           {% endif %}
         </div>
 
@@ -83,11 +112,14 @@
 <main class="content" role="main">
   <article class="post">
     <div class="inner">
+    {% if INDIEWEB is defined %}
       <section class="post-content e-content">
+    {% else %}
+      <section class="post-content">
+    {% endif %}
           {% if article.introduction %}
           <p class="post-large-text">{{ article.introduction | striptags}}</p>
           {% endif %}
-
           {{article.content}}
       </section>
 
