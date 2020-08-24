@@ -445,6 +445,25 @@ textarea {
 			margin-bottom: 2rem;
 		}
 	}
+
+	.toc ul {
+		font-family: var(--font-sans);
+		font-weight: 400;
+	}
+
+	.toc > ul {
+		padding-left: 0;
+
+		> li {
+			> a {
+				font-weight: 600;
+			}
+
+			&::before {
+				content: '';
+			}
+		}
+	}
 }
 /* ==========================================================================
    KG Cards
@@ -2525,3 +2544,4 @@ textarea {
 		background: $color-primary;
 	}
 }
+
