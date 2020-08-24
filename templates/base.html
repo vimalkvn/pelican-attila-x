@@ -114,8 +114,11 @@
           {% if 'primary' in COLORS %}
           --color-primary: {{ COLORS['primary'] }};
           {% endif %}
-          {% if 'primary-active' in COLORS %}
-          --color-primary-active: {{ COLORS['primary-active'] }};
+          {% if 'primary-dark' in COLORS %}
+          --color-primary-dark: {{ COLORS['primary-dark'] }};
+          {% endif %}
+          {% if 'primary-light' in COLORS %}
+          --color-primary-light: {{ COLORS['primary-light'] }};
           {% endif %}
         {% endif %}
     }
