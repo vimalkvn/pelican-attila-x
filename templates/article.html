@@ -76,9 +76,9 @@
           {% for author in article.authors %}
 
             {% if INDIEWEB is defined %}
-            <h4 class="post-meta-author"><a href="{{ SITEURL }}" rel="author" class="p-author h-card">{{author.name}}</a></h4>
+            <p class="post-meta-author"><a href="{{ SITEURL }}" rel="author" class="p-author h-card">{{author.name}}</a></p>
             {% else %}
-            <h4 class="post-meta-author"><a href="{{ SITEURL }}" rel="author">{{author.name}}</a></h4>
+            <p class="post-meta-author"><a href="{{ SITEURL }}" rel="author">{{author.name}}</a></p>
             {% endif %}
 
           {% endfor %}
