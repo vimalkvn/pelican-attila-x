@@ -12,7 +12,7 @@
 
   <!-- Profile picture -->
   {% if INDIEWEB['u-photo'] %}
-  <img class="u-photo" src="{{ INDIEWEB['u-photo'] }}"/>
+  <img class="u-photo" src="{{ INDIEWEB['u-photo'] }}" alt="Profile picture"/>
   {% endif %}
 
   <!-- My location -->
@@ -30,8 +30,8 @@
   {% endif %}
 
   {% if INDIEWEB['urls'] %}
-    {% for url in INDIEWEB['urls'] %}
-  <a class="u-url" rel="me" href="{{ url }}"></a>
+    {% for name, url in INDIEWEB['urls'].items() %}
+  <a class="u-url" rel="me" href="{{ url }}">{{ name }}</a>
     {% endfor %}
   {% endif %}
 

@@ -2183,9 +2183,8 @@ textarea {
 			font-size: 1.8rem;
 			height: 3.3rem;
 			padding: 0 1.25em 0 1em;
-			font-weight: 600;
 			color: #FFF;
-			background: $color-primary;
+			background: $color-primary-dark;
 			border: 0;
 			appearance: none;
 			outline: none;
@@ -2195,7 +2194,7 @@ textarea {
 
 			&:focus,
 			&:hover {
-				background: $color-background-dark;
+				background: $color-primary;
 			}
 		}
 	}
@@ -2394,13 +2393,13 @@ textarea {
 	margin: -1px 0;
 	padding: 0 2rem;
 	z-index: 100;
-	border: 1px solid $color-neutral-80;
+	border: 1px solid $color-border;
 	font-size: 1.5em;
 	line-height: 4rem;
 	font-weight: 400;
 	text-align: center;
 	text-decoration: none;
-	color: $color-neutral-60;
+	color: $color-text-secondary;
 	transition: all ease 0.2s;
 	border-radius: 4rem;
 	box-sizing: border-box;
