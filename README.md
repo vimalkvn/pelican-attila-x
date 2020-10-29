@@ -1,10 +1,7 @@
 # Pelican-Attila-X
 This is a modified version of the [Pelican](https://github.com/getpelican/pelican) [attila](https://github.com/arulrajnet/attila) theme by Arulraj V. [Original theme](https://github.com/zutrinken/attila) is made for the Ghost blogging platform by Peter Amende.
 
-## Demo
-* [My website](https://vimaltech.com)
-* [Skyrocket](https://skyrocket.vimaltech.com) — template based on this theme
-
+[Live Demo](https://vimaltech.com)
 
 ## Features
 - Responsive
@@ -25,13 +22,11 @@ This is a modified version of the [Pelican](https://github.com/getpelican/pelica
 ## Configuration
 The following settings can be added to **pelicanconf.py** in addition to the ones supported by Pelican (`SITENAME`, `SITEURL`, `AUTHOR` etc.,)
 
-### SITE_LOGO
-`string`
+### SITE_LOGO `string`
 
 Path to website's logo relative to the `content` directory, for example `images/logo.svg`.
 
-### AUTHORS
-`dict`
+### AUTHORS `dict`
 
 Metadata for authors. At a minimum, there should be a single entry corresponding to the website's `AUTHOR`, for example:
 
@@ -54,8 +49,7 @@ AUTHORS = {
 }
 ```
 
-### SOCIAL
-`tuple` of tuples
+### SOCIAL `tuple` of tuples
 
 Links to social media accounts for this website:
 
@@ -67,8 +61,7 @@ SOCIAL = (
 )
 ```
 
-### MENUITEMS
-`tuple` of tuples
+### MENUITEMS `tuple` of tuples
 
 Links to appear in site navigation:
 
@@ -79,10 +72,7 @@ MENUITEMS = (
 )
 ```
 
-**Note:** If `FORMSPREE_ID` is set, a contact page is automatically added to site navigation.
-
-### COVER_IMAGES
-`dict`
+### COVER_IMAGES `dict`
 
 Cover images to use in template pages. Keys correspond to template names.
 
@@ -103,7 +93,7 @@ COVER_IMAGES = {
 }
 ```
 
-### COLOR
+### COLORS `dict`
 Use an alternate color for links:
 
 ```python
@@ -112,81 +102,21 @@ COLORS = {
 }
 ```
 
-### FONTS
-`dict`
-
-Use Google fonts 
-
-**Note: This needs more testing**
-
-Theme includes (and uses) these fonts by default:
-* Lato (for headings)
-* Merriweather (for text)
-* Inconsolata (for code)
-
-If you prefer to use alternative fonts, you can set them here:
-
-```python
-FONTS = {
-    'sans': 'Roboto',
-    'serif': 'Lora'
-}
-```
-
 ---
 
 > The following settings can be added to **publishconf.py**
 
 ---
-### DISQUS_SITENAME
-If you wish to use Disqus comments, uncomment and set this value to your site name
-
-```python
-#DISQUS_SITENAME = ''
-```
-
-### ENABLE_COMMENTO
-Alternatively, if you use commento for comments, uncomment this setting
+### ENABLE_COMMENTO `boolean`
+If you use [Commento](https://commento.io/) for comments, uncomment this setting
 
 ```python
 #ENABLE_COMMENTO = True
 ```
 
-### GOOGLE_ANALYTICS
-If you wish to use Google Analytics, uncomment and set this value to your Google analytics ID i.e., UA-XXXXXXX
-
-```python
-#GOOGLE_ANALYTICS = 'UA-XXXXXX'
-```
-
-### FORMSPREE_ID
-To enable contact form, uncomment and set this value to your Formspree form ID
-
-```python
-#FORMSPREE_ID = 'abcdefg'
-```
-
-### MAILCHIMP_URL, MAILCHIMP_USER and MAILCHIMP_FORM_ID
-To enable users to subscribe to your blog using Mailchimp, uncomment this block and set `MAILCHIMP_URL` to the URL corresponding to your signup form. If you get errors while parsing `MAILCHIMP_USER` and `MAILCHIMP_FORM_ID`, please set
-these variables manually.
-
-```python
-## START MAILCHIMP BLOCK
-#
-#MAILCHIMP_URL = 'https://example.us4.list-manage.com/subscribe/post?u=1234567893d86023b9abcd&amp;id=6185580190'
-#
-#m = re.match('^https.+u=([0-9a-z]+)&amp;id=(\d+)$', MAILCHIMP_URL)
-## User is the string after u= i.e., 1234567893d86023b9abcd in this example
-#MAILCHIMP_USER = m.groups(0)[0]
-#
-##Form ID is the string after id= i.e., 6185580190 in this example
-#MAILCHIMP_FORM_ID = m.groups(0)[1]
-#
-## END MAILCHIMP BLOCK
-```
-
 ## Support Development
-If you would like to support development of this theme, you can consider purchasing [Skyrocket](https://gumroad.com/l/pelican-skyrocket) — a ready to use template for a Pelican based website with added features and sample content.
+If you would like to support development of this theme, you can consider making a donation on
+[Paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NS4HREAWJGFDC&source=url)
 
 ## License
 MIT
