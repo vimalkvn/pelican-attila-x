@@ -135,10 +135,6 @@
         </aside>
       {% endif %}
       </section>
-      {% if MAILCHIMP_URL and MAILCHIMP_USER and MAILCHIMP_FORM_ID %}
-        {% include 'services/mailchimp.html' %}
-      {% endif %}
-
       {# Ignore comments if set in article metadata #}
       {% if article.comments != "disable" %}
        {% include 'services/comments.html' %}

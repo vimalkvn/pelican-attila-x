@@ -12,7 +12,7 @@ This is a modified version of the [Pelican](https://github.com/getpelican/pelica
 - Detailed information in **author profiles** including links to social media accounts
 - **Social media integration** — support for Twitter, Facebook, GitHub, GitLab and Mastodon links in author profile and navigation
 - **Cover image** support for home page, article, page and templates
-- Can be configured to support **comments**, **email newsletter** and a **contact form**
+- Can be configured to support **comments** — currently supports Commento
 - **Syntax highlight** for code samples
 - **Next** and **Previous** posts beneath blog posts (requires the neighbors plugin)
 

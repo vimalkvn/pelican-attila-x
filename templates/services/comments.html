@@ -5,28 +5,6 @@
       <noscript>Please enable JavaScript to view the comments.</noscript>
       <div id="commento"></div>
   </section>
-  {% elif DISQUS_SITENAME %}
-  <section class="post-comments">
-      <div class="comments">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          var disqus_shortname = '{{ DISQUS_SITENAME }}';
-          {% if article %}
-          var disqus_identifier = '{{ article.url }}';
-          var disqus_url = '{{ SITEURL }}/{{ article.url }}';
-          {% elif page %}
-          var disqus_identifier = '{{ page.url }}';
-          var disqus_url = '{{ SITEURL }}/{{ page.url }}';
-          {% endif %}
-          (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//{{ DISQUS_SITENAME }}.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the comments.</noscript>
-      </div>
-  </section>
   {% endif %}
 {% endif %}
 
