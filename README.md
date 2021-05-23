@@ -1,7 +1,13 @@
-# Pelican-Attila-X
+# Attila-X — theme for Pelican
+
+**Warning:** Theme is being modified heavily at present. 
+Things might break. This documentation is also out of date.
+
+---
+
 This is a modified version of the [Pelican](https://github.com/getpelican/pelican) [attila](https://github.com/arulrajnet/attila) theme by Arulraj V. [Original theme](https://github.com/zutrinken/attila) is made for the Ghost blogging platform by Peter Amende.
 
-[Live Demo](https://vimaltech.com)
+[Live Demo](https://vimalkvn.com)
 
 ## Features
 - Responsive

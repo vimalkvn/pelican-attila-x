@@ -9,6 +9,7 @@
                 <h2 class="post-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
                 </h2>
                 <span class="post-meta">
+                    By
                     {% for author in article.authors %}
                         {% set author_name = author.name | title %}
                         {% if AUTHORS_BIO and author.name.lower() in AUTHORS_BIO %}
@@ -16,23 +17,25 @@
                         {% endif %}
                         <a href="{{ SITEURL }}/{{ author.url }}">{{ author_name }}</a>
                     {% endfor %}
-                     &centerdot; <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %B %Y') }}</time>
+                    {% if article.tags %}
+                      {% set primary_tag = article.tags[0] %}
+                      in <a class="post-meta-tag" href="{{ SITEURL }}/{{ primary_tag.url }}">{{primary_tag | escape}}</a>
+                    {% endif %}
+                    on <time datetime="{{ article.date.isoformat() }}">{{ article.date | strftime('%d %b %Y') }}</time>
                 </span>
 
             {% if SHOW_FULL_ARTICLE %}
                 <p class="post-content">
                 {{ article.content }}
-                </section>
-            {% else %}
-                <p class="post-excerpt">
-                    {% if article.introduction %}
-                        {{ article.introduction | striptags}}
-                    {% elif article.has_summary %}
-                        {{ article.summary }}
-                    {% elif article.summary %}
-                        {{ article.summary|striptags|truncate(250) }}
-                    {% endif %}
                 </p>
+            {% else %}
+              <p class="post-excerpt">
+              {% if article.has_summary %}
+                  {{ article.summary }}
+              {% elif article.summary %}
+                  {{ article.summary | striptags | truncate(250) }}
+              {% endif %}
+              </p>
             {% endif %}
             </div>
         </div>

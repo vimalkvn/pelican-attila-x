@@ -1,21 +1,17 @@
-<div id="search" class="container">
-  <div class="content">
-    <div class="blog-header">
-      <div class="inner">
-        <div class="archive archive-search box archive-box">
-          <form class="search" action="https://duckduckgo.com/">
-            <input type="hidden" name="kf" value="-1">
-              <input type="hidden" name="kaf" value="1">
-              <input type="hidden" name="k1" value="-1">
-              <input type="hidden" name="sites" value="{{ SITEURL }}">
-              <input type="text" id="search-field" name="q" placeholder="Search &#8230;" autocomplete="off" aria-label="Search" />
-              <input type="submit" value="Submit" />
-            </form>
-        </div>
-      </div> <!-- .inner -->
-    </div> <!-- .blog-header -->
-    <div id="results"></div>
-  </div> <!-- .content -->
-  <div class="search-close"></div>
+<div id="search" class="search-wrapper">
+  <div class="search">
+    <form class="search-form" action="https://duckduckgo.com/">
+      <input type="hidden" name="kf" value="-1">
+        <input type="hidden" name="kaf" value="1">
+        <input type="hidden" name="k1" value="-1">
+        <input type="hidden" name="sites" value="{{ SITEURL }}">
+        <input class="search-field" type="text" id="search-field" name="q" placeholder="Search &#8230;" autocomplete="off" aria-label="Search" />
+        <button class="search-button" type="submit">
+		      <i class="icon icon-search" aria-hidden="true"></i>
+	      </button>
+    </form>
+    <div class="search-result"></div>
+  </div>
+	<button class="search-wrapper-close" aria-label="Close"></button>
 </div> <!-- .container -->
 

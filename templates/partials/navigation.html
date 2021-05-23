@@ -23,7 +23,7 @@
       </ul>
 
 
-      <ul class="nav-side">
+      <ul class="nav-meta">
         {% for title, link in SOCIAL %}
         {% set social_name = title.lower() %}
         <li class="nav-{{ social_name }}">
@@ -33,14 +33,15 @@
         <li class="nav-rss">
           <a aria-label="rss" title="RSS" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-search"><a><i class="icon icon-search"></i><span>Search</span></a></li>
+        <!-- <li class="nav-search" style="display: none;"> -->
+        <!--   <a title="Search"><i class="icon icon-search" aria-hidden="true"></i><span>Search</span></a></li> -->
       </ul>
   </nav>
 
   <div class="nav-wrapper-control">
     <div class="inner">
       <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
-      <a class="nav-search" title="Search" role="button"><i class="icon icon-search" aria-hidden="true"></i></a>
+      <!-- <a class="nav-search" style="display: none;" title="Search" role="button"><i class="icon icon-search" aria-hidden="true"></i></a> -->
     </div>
   </div>
 </div>

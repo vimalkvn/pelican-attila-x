@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       'jsDependencies': [
         '<%= config.jsSrcDir %>/libs/jquery.min.js',
         '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
-        '<%= config.jsSrcDir %>/libs/jquery.history.js'
+        '<%= config.jsSrcDir %>/libs/highlight.pack.js'
       ]
     },
     copy: {
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
           sourceMaps: true
         },
         files: {
-          '<%= config.cssTargetDir %>/style.css': '<%= config.cssSrcDir %>/style.scss'
+          '<%= config.cssTargetDir %>/custom.css': '<%= config.cssSrcDir %>/custom.scss'
         }
       },
       dist: {
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          '<%= config.cssTargetDir %>/style.css': '<%= config.cssSrcDir %>/style.scss'
+          '<%= config.cssTargetDir %>/custom.css': '<%= config.cssSrcDir %>/custom.scss'
         }
       }
     },

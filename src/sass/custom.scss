@@ -1,0 +1,33 @@
+/* Custom styles for pelican-attila-x */
+
+@import "style";
+
+:root {
+	--color-content-lead: #222;
+	--font-secondary: 'Source Serif 4', serif;
+	--ghost-accent-color: #00b4ff;
+}
+
+.post-content, .post-excerpt {
+	font-size: 2em;
+	line-height: 1.75em;
+}
+
+.post-share .email {
+	background-color: #FF9900;
+}
+
+.nav-meta {
+
+	li {
+		&.nav-mastodon,
+		&.nav-gitlab,
+		&.nav-rss
+		{
+		
+			@media only screen and (max-width: $breakpoint-medium) {
+				display: none;
+			}
+		}
+	}
+}

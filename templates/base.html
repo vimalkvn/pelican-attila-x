@@ -57,7 +57,7 @@
       {% endif %}
   {% endfor %}
 
-  <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" type="text/css" rel="stylesheet" />
+  <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom.css" type="text/css" rel="stylesheet" />
 
   {% if CSS_OVERRIDE %}
     <!-- CSS specified by the user -->
@@ -96,14 +96,27 @@
         {% endif %}
     }
   </style>
-  {% include 'services/webmention.html' %}
   {% include 'services/plausible.html' %}
+  
+  <script>
+    var localTheme = localStorage.getItem('attila_x_theme');
+    switch (localTheme) {
+      case 'dark':
+          document.documentElement.classList.add('theme-dark');
+          break;
+      case 'light':
+          document.documentElement.classList.add('theme-light');
+          break;
+      default:
+          break;
+    }
+  </script>  
   {% endblock head %}
 
 </head>
 <body class="home-template">
   {% include 'partials/navigation.html' %}
-  <section class="page-wrapper h-entry">
+  <section class="page-wrapper">
   {% block header %}{% endblock header %}
   {% block content %}{% endblock content %}
   {% include 'partials/search.html' %}
@@ -126,6 +139,5 @@
   {% block scripts %}
   <!-- Additional javascript from individual templates -->
   {% endblock scripts %}
-  {% include 'partials/indieweb.html' %}
 </body>
 </html>

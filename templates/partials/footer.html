@@ -1,7 +1,11 @@
 <div class="nav-footer">
   <nav class="nav-wrapper" aria-label="Footer">
-    <span class="nav-copy"><a href="{{ SITEURL }}/">{{ SITENAME }}</a> &copy; 2020</span>
-      <span class="nav-credits">
+    <span class="nav-copy"><a href="{{ SITEURL }}/">{{ SITENAME }}</a> &copy; 2021
+    <a class="nav-rss" title="RSS" 
+      href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" 
+      target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a>
+    </span>
+      <span class="nav-credits"> 
       {% if FOOTER_ITEMS is defined %}
         {% for item, value in FOOTER_ITEMS %}
           {% if item == 'text' %}
@@ -11,9 +15,11 @@
           {% endif %}
         {% endfor %}
       {% else %}
-        Powered by <a href="https://github.com/getpelican/pelican">Pelican</a> &centerdot;
-        <a href="https://gitlab.com/vimalkvn/pelican-attila-x">Attila-X</a>
+        Published with <a href="https://github.com/getpelican/pelican">Pelican</a> &bull;
+        Theme <a href="https://gitlab.com/vimalkvn/pelican-attila-x">Attila-X</a>
       {% endif %}
+      &bull; 
+      <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> 
     </span>
   </nav>
 </div>
