@@ -33,8 +33,8 @@
   <article class="post">
     <div class="inner">
       <section class="post-content">
-          {% if page.introduction %}
-          <p class="post-large-text">{{ page.introduction | striptags }}</p>
+          {% if page.summary %}
+          <p class="summary">{{ page.summary | striptags }}</p>
           {% endif %}
           {{page.content}}
           {% block contact_section %}{% endblock %}

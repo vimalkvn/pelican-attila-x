@@ -54,6 +54,9 @@
             {% if author_data.mastodon %}
               <a target="_blank" href="{{ author_data.mastodon }}" title="Mastodon"><i class="icon icon-mastodon"></i><span>Mastodon</span></a>
             {% endif %}
+            {% if author_data.email %}
+              <a target="_blank" href="mailto:{{ author_data.email }}" title="Email"><i class="icon icon-mail"></i><span>Email</span></a>
+            {% endif %}
           </span>
         </div>
     
