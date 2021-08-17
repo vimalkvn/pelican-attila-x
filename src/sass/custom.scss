@@ -4,9 +4,10 @@
 
 :root {
 	--color-content-lead: #222;
-	--color-background-main: #fffefc;
+	--color-background-main: #fefefe;
 	--font-secondary: 'Source Serif 4', serif;
-	--ghost-accent-color: #223355;
+	--color-primary: #327CCB;
+	--ghost-accent-color: #327CCB;
 }
 
 .blog-name {
@@ -47,19 +48,6 @@
 	font-size: 2em;
 	line-height: 1.75em;
 
-	a {
-		box-shadow: none;
-		border-bottom: 0.1em dotted;
-		color: var(--ghost-accent-color);
-		
-		&:hover,
-		&:focus {
-			box-shadow: none;
-			border-bottom-style: solid;
-			border-bottom-color: inherit;
-		}
-	}
-	
 	figure a.kg-bookmark-container:hover, figure a.kg-bookmark-container:focus {
 		border: 1px solid var(--color-background-contrast);
 	}
@@ -67,6 +55,14 @@
 	p.summary {
 		font-size: 2.7rem;
 		margin-bottom: 2em;
+	}
+
+	dl dt::before {
+		background-color: var(--color-content-secondary);
+	}
+
+	ol > li::before, ul > li::before {
+		color: var(--color-content-secondary);
 	}
 }
 
